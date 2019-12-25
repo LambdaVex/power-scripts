@@ -1,4 +1,4 @@
-# shell-scripts
+# shell and perl scripts
 
 
 #### For windows:
