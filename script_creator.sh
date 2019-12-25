@@ -2,6 +2,7 @@
 
 # This script helps you create a new script in a bin directory. It sets the permission and opens the script for you in a file editor.
 # Be sure to have a default editor set: Export EDITOR=nano
+# Author: Ali Denno
 
 # Is there an argument?
 if [[ ! $1 ]]; then

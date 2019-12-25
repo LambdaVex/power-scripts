@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# This script compares two directories based on the number of files in each 
-
+# This script compares two directories based on the number of files in each
+# Author: Ali Denno
 
 if [[ $# -ne 2 ]]; then
 	echo "Need exactly two arguments"
