@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script that number files in the current directory according to when they were created
+# Script that numbers files in the current directory according to when they were created
 # Author: Ali Denno
 
 mydir=$(mktemp -d "${TMPDIR:-/tmp/}$(basename $0).XXXXXXXXXXXX")
