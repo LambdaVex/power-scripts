@@ -11,7 +11,7 @@ fi
 pattern="$1"
 
 printf "> Found in the following files:\n"
-grep -rnw . -e $pattern | xargs -L1 echo
+grep -rnwi . -e $pattern | xargs -L1 echo
 printf "\n> Found the following folders:\n"
 find . -name $pattern | xargs -L1 echo
 
