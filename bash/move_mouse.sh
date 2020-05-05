@@ -1,3 +1,4 @@
+#!/bin/bash
 LENGTH=100
 DELAY=5
 while true
