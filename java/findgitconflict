@@ -1,11 +1,11 @@
+#!/usr/bin/java --source 11
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.IntStream;
 
 public class FindGitConflict {
-
     public static void main(String... args) throws Exception {
-        Files.lines(Paths.get("resources/index.html"))
+        Files.lines(Paths.get(args[0]))
              .dropWhile(l -> !l.contains("<<<<<<<"))
              .skip(1)
              .takeWhile(l -> !l.contains(">>>>>>>"))
