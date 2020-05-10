@@ -12,7 +12,6 @@ public class ListFiles{
         HttpResponse<String> response = httpClientSync.send(req1, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.headers().map());
 
-
         HttpClient httpClientAsync = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).build();
         HttpRequest reqAsync = HttpRequest.newBuilder(URI.create("https://google.com")).GET().build();
         CompletableFuture<HttpResponse<String>> resFuture = httpClientAsync.sendAsync(reqAsync, HttpResponse.BodyHandle$        resFuture.thenAccept(res->System.out.println(res.version()));
