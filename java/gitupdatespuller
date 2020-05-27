@@ -1,0 +1,16 @@
+#!/usr/bin/java --source 11
+# A hacky not safe script that updates a bulk of projects/modules that contain a pom file
+# Author: Ali Denno
+
+import java.nio.file.*;
+public class GitUpdatesPuller{
+    public static void main(String[] args) throws IOException{
+        Files.walk(Paths.get(args[0])).forEach(c-> {
+            if(c.toString().contains("pom.xml")) {
+                System.out.println("performing git -C " + c.getParent().toString() +" pull");
+                try { Runtime.getRuntime().exec("git -C " + c.getParent().toString() +" pull"); }
+                catch (IOException e) { e.printStackTrace(); }
+            }
+        });
+    }
+}
