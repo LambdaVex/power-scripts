@@ -4,8 +4,8 @@ Run Python scripts
 # use python or python3
 
 $ python
-$ from yourScript import yourMethod
-$ yourMethod()
+>>> from yourScript import yourMethod
+>>> yourMethod()
 
 #or
 
