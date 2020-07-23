@@ -2,6 +2,6 @@ Run Python scripts
 ------------------
 ```bash
 $ python
-$ from YourScript import YourMethod
-$ YourMethod()
+$ from yourScript import yourMethod
+$ yourMethod()
 ```
