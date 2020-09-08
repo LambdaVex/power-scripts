@@ -6,7 +6,7 @@ REM ----------------------------------------------------------------------------
 REM **************************************
 REM Change these settings
 REM **************************************
-set MAGIC_CHECKOUT_PATH="C:\Prog\HV11F41\git-checkout"
+set MAGIC_CHECKOUT_PATH="C:\Prog\USER\git-checkout"
 set MAGIC_TOMCAT_ROOT_PATH="C:\dev\Servers\expert\apache-tomcat-9.0.12"
 REM -------------------------------------------------------------------------------------------------------
 
