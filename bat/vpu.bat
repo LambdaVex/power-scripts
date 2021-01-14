@@ -1,41 +1,68 @@
+
 @echo off
 cls
-REM @echo on
-
-REM -------------------------------------------------------------------------------------------------------
 REM **************************************
 REM Change these settings
 REM **************************************
-set MAGIC_CHECKOUT_PATH="C:\Prog\USER\git-checkout"
+set MAGIC_CHECKOUT_PATH="C:\dev\Repository\git-checkout"
 set MAGIC_TOMCAT_ROOT_PATH="C:\dev\Servers\expert\apache-tomcat-9.0.12"
-REM -------------------------------------------------------------------------------------------------------
+REM **************************************
+REM Important note: 
+REM For dewfault this script uses JREBEL for hot deploy, without the need to deploy and restart
+REM Tomcat if code changes happen. Take care to have JRebel installed
+REM and catalina-rebel.bat in your Tomcat bin directory.
+REM If you do not use JRebel you need to change the following settings.
+REM **************************************
+REM If you do not have JRebel comment out the following line:
+set MAGIC_TOMCAT_START_SCRIPT="catalina-rebel.bat"
+REM If you do not have JRebel uncomment the following line:
+REM set MAGIC_TOMCAT_START_SCRIPT="catalina.bat"
+
 
 REM **************************************
 REM Defaults - Do NOT change these settings
 REM **************************************
+set MAGIC_VERSION="Ver. 1.1.0 - 14.01.2021"
 set MAGIC_SKIPTESTS="-DskipTests"
+set MAGIC_FORCE_UPDATE_SNAPSHOTS=FALSE
 set MAGIC_DO_BUILD=FALSE
 set MAGIC_DO_GIT_CHECKOUT=FALSE
 set MAGIC_DO_GIT_PULL=TRUE
 set MAGIC_PROJECT=UNDEFINED
 set MAGIC_DEPLOY_WAR_PATH=%MAGIC_TOMCAT_ROOT_PATH%\webapps
 set MAGIC_DEPLOY_EXPERT_LIB_PATH=%MAGIC_TOMCAT_ROOT_PATH%\webapps\vpuexpert\WEB-INF\lib
+REM **************************************
+
+@echo -------------------------------------------------------------------------------------------------------
+@echo.
+@echo   magic
+@echo     Version: %MAGIC_VERSION%
+@echo     by Christoph Wagner (hv11f41)
+@echo     VpuExpert Build und Deploy Script
+@echo.
 
 REM **************************************
 REM -------------------------------------------------------------------------------------------------------
 REM Tests ausführen? Standardmäßig werden keine Tests ausgeführt
 if 1%3==1noskip set MAGIC_SKIPTESTS=
+REM -------------------------------------------------------------------------------------------------------
+REM Beim Maven-Build SNAPSHOTS aktualisieren erzwingen
+if 1%3==1updatesnapshots set MAGIC_FORCE_UPDATE_SNAPSHOTS=TRUE
+if 1%4==1updatesnapshots set MAGIC_FORCE_UPDATE_SNAPSHOTS=TRUE
+
 REM Es muss mindestens ein Parameter angegeben werden
 if 1%1==1 (
+	@echo -------------------------------------------------------------------------------------------------------
 	@echo.
-	@echo Parameter muss angegeben werden!
+	@echo   Parameter muss angegeben werden!
 	@echo.
 	goto hilfe
 )
 REM Für deploylib muss eine Datei als zweiter Parameter angegeben werden
 if 1%1==1deploylib if 1%2==1 (
+	@echo -------------------------------------------------------------------------------------------------------
 	@echo.
-	@echo FEHLER: .jar Datei muss angegeben werden!
+	@echo   FEHLER: .jar Datei muss angegeben werden!
 	@echo.
 	goto hilfe
 ) else (
@@ -63,40 +90,40 @@ goto printinfos
 :hilfe
 @echo -------------------------------------------------------------------------------------------------------
 @echo.
+@echo Aufruf Git Pull und/oder Maven Build:
+@echo.
+@echo   magic all ^| allg ^| adapter-clients ^| service ^| core ^| expert [mvn ^| mvnnopull] [noskip^| updatesnapshots] [updatesnapshots]
+@echo.
+@echo   magic all ^| allg ^| adapter-clients ^| service ^| core ^| expert checkout branch-to-checkout
+@echo.
 @echo Aufruf Deployment:
 @echo.
 @echo   magic deploy ^| deploylib full-path-to-file.jar
 @echo.
-@echo.
-@echo oder Aufruf Git Pull und/oder Maven Build
-@echo.
-@echo   magic all ^| allg ^| adapter-clients ^| service ^| core ^| expert [mvn ^| mvnnopull] [noskip]
-@echo.
-@echo   magic all ^| allg ^| adapter-clients ^| service ^| core ^| expert checkout branch-to-checkout
-@echo.
-@echo.
-@echo oder Aufruf Tomcat starten (vorher stoppen)
+@echo Aufruf Tomcat starten (vorher stoppen):
 @echo.
 @echo   magic start-tomcat
 @echo.
-@echo z.B.
-@echo magic deploy               	- kopiert vpuexpert.war in das Tomcat webapps Verzeichnis
-@echo magic deploylib C:\test.jar   - kopiert C:\test.jar in das Tomcat vpuexpert-lib Verzeichnis
+@echo Beispiele:
 @echo.
-@echo magic all                  	- alle Projects, git pull, NO mvn build
-@echo magic all mvn noskip       	- all projects, git pull, mvn build WITH tests
-@echo magic core                 	- vpu-Core, git pull, NO mvn build
-@echo magic expert mvn           	- vpu-expert, git pull, mvn build WITH tests
-@echo magic expert mvnnopull     	- vpu-expert, NO git pull, mvn build WITH tests
-@echo magic service mvn noskip   	- vpu-service, git pull, mvn build WITH tests
+@echo   magic all                  	- alle Projekte, git pull, KEIN mvn build
+@echo   magic all mvn               	- alle Projekte, git pull, mvn build
+@echo   magic all mvn updatesnapshots	- alle Projekte, git pull, mvn build KEINE tests, force update snapshots
+@echo   magic all mvn noskip       	- alle Projekte, git pull, mvn build MIT tests
+@echo   magic core                 	- vpu-Core, git pull, KEIN mvn build
+@echo   magic expert mvn           	- vpu-expert, git pull, mvn build MIT tests
+@echo   magic expert mvnnopull     	- vpu-expert, KEIN git pull, mvn build MIT tests
+@echo   magic service mvn noskip   	- vpu-service, git pull, mvn build MIT tests
 @echo.
-@echo --- checkout parameter details ----
-@echo magic all checkout feature^/name-of-branch
-@echo --- git checkout des angegebenen Branch fuer alle Projekte, git pull, NO mvn build
+@echo   magic deploy               	- kopiert vpuexpert.war in das Tomcat webapps Verzeichnis
+@echo   magic deploylib C:\test.jar	- kopiert C:\test.jar in das Tomcat vpuexpert-lib Verzeichnis
 @echo.
-@echo magic start-tomcat            - starten Tomcat neu (im JPDA Debug-Modus)
+@echo --- Checkout Parameter Details ----
+@echo   magic all checkout feature^/name-of-branch
+@echo --- git checkout des angegebenen Branch fuer alle Projekte, git pull, KEIN mvn build
 @echo.
-@echo -------------------------------------------------------------------------------------------------------
+@echo   magic start-tomcat          	- Tomcat neu starten (im JPDA Debug-Modus)
+@echo.
 goto ende
 
 :deploy
@@ -137,20 +164,20 @@ goto ende
 
 :start-tomcat
 cd %MAGIC_TOMCAT_ROOT_PATH%\bin
+@echo -------------------------------------------------------------------------------------------------------
 @echo.
 @echo Stoppe Tomcat ...
 @echo.
-cmd.exe /c "catalina-rebel.bat stop"
+cmd.exe /c "%MAGIC_TOMCAT_START_SCRIPT% stop"
 @echo.
 @echo Starte Tomcat (Debug) ...
 @echo.
-cmd.exe /c "catalina-rebel.bat jpda start"
+cmd.exe /c "%MAGIC_TOMCAT_START_SCRIPT% jpda start"
 @echo.
 goto ende
 
 :printinfos
 
-@echo.
 @echo ------------------------------------------------------------------
 @echo.
 @echo ******************************************************************
@@ -161,7 +188,16 @@ goto ende
 @echo VpuExpert-JAR-Deploy-Verzeichnis: %MAGIC_DEPLOY_EXPERT_LIB_PATH%
 @echo ******************************************************************
 @echo.
+@echo Kommandorzeilen-Parameter:
 @echo.
+@echo Kommandozeilen-Parameter 1: %1
+@echo Kommandozeilen-Parameter 2: %2
+@echo Kommandozeilen-Parameter 3: %3
+@echo Kommandozeilen-Parameter 4: %4
+@echo.
+@echo ******************************************************************
+@echo.
+
 if %MAGIC_PROJECT% NEQ UNDEFINED (
 	@echo Berarbeite Projekt^(e^) %MAGIC_PROJECT%
 	@echo.
@@ -180,6 +216,13 @@ if %MAGIC_DO_GIT_PULL%==TRUE (
 if %MAGIC_DO_BUILD%==TRUE (
 	@echo Maven-Build wird ausgefuehrt.
 	@echo.
+	if %MAGIC_FORCE_UPDATE_SNAPSHOTS%==TRUE (
+		@echo Maven-Build: force update snapshots wird ausgefuehrt ^(^-U^)
+		@echo.
+	) else (
+		@echo Maven-Build: force update snapshots wird NICHT ausgefuehrt ^(kein ^-U^)
+		@echo.
+	)
 ) else (
 	@echo Maven-Build wird NICHT ausgefuehrt.
 	@echo.
@@ -192,9 +235,6 @@ if 1%MAGIC_SKIPTESTS%==1 (
 	@echo Tests werden NICHT ausgefuehrt.
 )
 @echo.
-@echo.
-@echo ------------------------------------------------------------------
-@echo.
 if %MAGIC_PROJECT%==UNDEFINED goto hilfe
 if %MAGIC_PROJECT%==all goto allg
 if %MAGIC_PROJECT%==allg goto allg
@@ -205,6 +245,7 @@ if %MAGIC_PROJECT%==expert goto expert
 goto ende
 
 :allg
+@echo -------------------------------------------------------------------------------------------------------
 @echo.
 @echo *** vpu-allg - vpu-all-bom ***
 if %MAGIC_DO_GIT_CHECKOUT%==TRUE (
@@ -223,7 +264,11 @@ if %MAGIC_DO_GIT_PULL%==TRUE (
 )
 if %MAGIC_DO_BUILD%==TRUE (
 	cd %MAGIC_CHECKOUT_PATH%\vpu-allg\vpu-all-bom
-	cmd.exe /c "mvn clean install -Pdevelopment %MAGIC_SKIPTESTS% -T 1C"
+	if %MAGIC_FORCE_UPDATE_SNAPSHOTS%==TRUE (
+		cmd.exe /c "mvn clean install -Pdevelopment %MAGIC_SKIPTESTS% -T 1C -U"
+	) else (
+		cmd.exe /c "mvn clean install -Pdevelopment %MAGIC_SKIPTESTS% -T 1C"
+	)
 	@echo.
 )
 @echo.
@@ -367,11 +412,10 @@ if %MAGIC_DO_BUILD%==TRUE (
 )
 
 :ende
-@echo.
-@echo ==================================================================
+@echo -------------------------------------------------------------------------------------------------------
 @echo.
 @echo  Fertig.
 @echo.
-@echo ==================================================================
+@echo -------------------------------------------------------------------------------------------------------
 @echo.
 cd \dev
