@@ -5,6 +5,6 @@
   tasks:
     - name: Create a config file called '/etc/testconfig.conf'
       copy:
-        content: "{{ hostvars[inventory_hostname].ansible_default_ipv4.macaddress, hostvars[inventory_hostname].ansible_default_ipv4.address }}"
+        content: "{{ hostvars[inventory_hostname].ansible_default_ipv4.address, hostvars[inventory_hostname].ansible_facts.fqdn, hostvars[inventory_hostname].ansible_default_ipv4.macaddress }}"
         dest: /etc/testconfig.conf
       delegate_to: localhost
