@@ -1,0 +1,17 @@
+---
+- name: "Creating Config"
+  hosts: 127.0.0.1
+  connection: local 
+  vars:
+    info:
+      - northeast
+      - southeast
+      - midwest
+  tasks:
+    
+    - name: Create a file called '/Ansible/testfile.txt' with the content 'hello world'.
+      copy:
+        content: "{{ info[0], info[1], info[2] }}"
+        dest: /testfile.txt
+      delegate_to: localhost
+
