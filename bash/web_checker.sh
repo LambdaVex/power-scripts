@@ -3,7 +3,7 @@
 webserv="www.google.com" 
 keyword="googleg_standard_color_128dp.png"
 
-if curl -s "$webserv" | grep "$keyword"
+if curl -s "$webserv" | grep -q "$keyword"
 then
     echo "OK"
 else
