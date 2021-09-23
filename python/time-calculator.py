@@ -25,6 +25,4 @@ def calculate_info(start, end, pause, basis, shortday):
 
 calculate_info(datetime.timedelta(hours=8, minutes=0, seconds=0),  # start
                datetime.timedelta(hours=15, minutes=0, seconds=0),  # end
-               PAUSE,
-               BASIS,
-               SHORTDAY)
+               PAUSE, BASIS, SHORTDAY)
