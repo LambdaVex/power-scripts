@@ -1,5 +1,10 @@
 import datetime
 
+PAUSE = datetime.timedelta(hours=00, minutes=45, seconds=00)
+BASIS = datetime.timedelta(hours=7, minutes=36, seconds=00)
+SHORTDAY = datetime.timedelta(hours=6, minutes=00, seconds=00)
+
+
 def calculate_info(start, end, pause, basis, shortday):
     if shortday > (end - start - pause):
         pause = datetime.timedelta(hours=00, minutes=00, seconds=00)
@@ -18,9 +23,8 @@ def calculate_info(start, end, pause, basis, shortday):
     print("************************")
 
 
-calculate_info(datetime.timedelta(hours=7, minutes=30, seconds=00),  # start
-               datetime.timedelta(hours=17, minutes=00, seconds=00),  # end
-               datetime.timedelta(hours=00, minutes=45, seconds=00),  # pause
-               datetime.timedelta(hours=7, minutes=36, seconds=00),  # basis
-               datetime.timedelta(hours=6, minutes=00, seconds=00)  # shortday
-               )
+calculate_info(datetime.timedelta(hours=8, minutes=0, seconds=0),  # start
+               datetime.timedelta(hours=15, minutes=0, seconds=0),  # end
+               PAUSE,
+               BASIS,
+               SHORTDAY)
