@@ -1,4 +1,4 @@
-# This script reads numbers of a file (line by line) and add them together.
+# This script reads numbers from a file (line by line) and add them together.
 # Reason I created this script is that Excel is a pain in the ass when it comes to numbers with dots instead of commas.
 
 total = 0
