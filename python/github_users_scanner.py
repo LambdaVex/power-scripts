@@ -37,4 +37,4 @@ elif mode == "2":
 
     show_data(followers_data, following_data)
 else:
-    print('choice is not recognized!')
+    print('Choice was not recognized!')
