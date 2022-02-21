@@ -11,3 +11,9 @@ $ python
 
 $ python3 yourScript.py
 ```
+
+So PEP 8 tells you that:
+------------------
+* modules (filenames) should have short, all-lowercase names, and they can contain underscores.
+* packages (directories) should have short, all-lowercase names, preferably without underscores.
+* classes should use the CapWords convention.
