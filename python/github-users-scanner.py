@@ -3,8 +3,8 @@
 
 import requests
 
-followers_data = requests.get("https://api.github.com/users/AliDenno/followers?per_page=2000").json()
-following_data = requests.get("https://api.github.com/users/AliDenno/following?per_page=2000").json()
+followers_data = requests.get("https://api.github.com/users/XXXX/followers?per_page=2000").json()
+following_data = requests.get("https://api.github.com/users/XXXX/following?per_page=2000").json()
 
 followers_list = []
 following_list = []
