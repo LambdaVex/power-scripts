@@ -14,6 +14,7 @@ printf "> Found in the following files:\n"
 grep -rnwi . -e $pattern | xargs -L1 echo
 printf "\n> Found the following folders:\n"
 find . -name $pattern | xargs -L1 echo
+# find / -type f -name "catalina.sh"
 
 #alternatively
 #find . -name $pattern | while read line ; do echo $line ; done
