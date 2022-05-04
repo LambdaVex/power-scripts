@@ -68,4 +68,6 @@ lsb_release
 Ctrl + A
 # Go to the end of a command
 Ctrl + E
+# Clear screen
+Ctrl + L
 ```
