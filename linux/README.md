@@ -57,3 +57,15 @@ lsb_release
 
 > https://kifarunix.com/install-i3-windows-manager-on-ubuntu/
 ```
+
+### Useful Commands
+```sh
+# Home directory
+:~$ cd ~
+# Previous directory
+:~$ cd -
+# Go to the beginning of a command
+Ctrl + A
+# Go to the end of a command
+Ctrl + E
+```
