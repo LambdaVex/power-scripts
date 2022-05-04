@@ -64,10 +64,18 @@ lsb_release
 :~$ cd ~
 # Previous directory
 :~$ cd -
+# Go to directory and save current
+:~$ pushd /var
+# Return to saved directory
+:~$ popd
+# Reset Shell
+:~$ reset
+
 # Go to the beginning of a command
 Ctrl + A
 # Go to the end of a command
 Ctrl + E
-# Clear screen
+# Clear screen by moving the command prompt to the top of the screen (history still there)
 Ctrl + L
+
 ```
