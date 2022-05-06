@@ -64,7 +64,7 @@ lsb_release
 :~$ cd ~
 # Previous directory
 :~$ cd -
-# Go to directory and save current
+# Go to directory and save current (This works as a stack)
 :~$ pushd /var
 # Return to saved directory
 :~$ popd
@@ -77,5 +77,10 @@ Ctrl + A
 Ctrl + E
 # Clear screen by moving the command prompt to the top of the screen (history still there)
 Ctrl + L
+
+# Send something to the background without closing it (Vim, Htop, etc.)
+Ctrl + Z
+# Bring it back again
+:~$ fg
 
 ```
