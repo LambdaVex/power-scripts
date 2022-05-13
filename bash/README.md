@@ -5,8 +5,10 @@ Do you have the execute permission for your_script.sh
 # You can verify this by running 
 $ ls -l your_script.sh
 
-# You can make it executable by running
+# You can make it executable by running (add permission with + and remove it with -) [https://tldp.org/LDP/intro-linux/html/sect_03_04.html]
 $ chmod u+x your_script.sh (+x for execute permission, u user permission (adding execute permission only to the user who owns this file))
+# or
+$ chmod a+x your_script.sh (a is for all)
 # or
 $ chmod +rx your_script.sh
 ```
