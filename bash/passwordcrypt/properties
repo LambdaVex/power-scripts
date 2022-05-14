@@ -1,2 +1,3 @@
-password=PasswordToCrypt
+password=PasswordToEncrypt
+secret=PasswordToDecrypt
 salt=PasswordSalt
