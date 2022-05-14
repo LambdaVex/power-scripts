@@ -30,3 +30,15 @@ $ echo $PATH
 # now you should be able to execute your script from anywhere
 $ greeter
 ```
+
+### Debugging?
+```bash
+$ #!/bin/bash -v
+# or
+$ #!/bin/bash -x
+```
+
+### Check your script?
+```bash
+$ shellcheck your_script.sh
+```
