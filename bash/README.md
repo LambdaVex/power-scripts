@@ -54,6 +54,13 @@ $ printf "I am %s and my shell is %s\n" $USER $SHELL
 
 # always qoute and use braces when you have concatenated variables (concatenation between variables or and strings etc.):
 $ grep -- "$container" file.csv > "$directory/${container}_report.csv"
+
+# you can use Export, to export a variable to child processes
+$ my_file=test.txt
+$ export my_file
+# Next you can define the variable in the init files (.bashrc or .zshrc)
+# add the line
+$ export my_file="$HOME/data.csv"
 ```
 
 ### Best practices
