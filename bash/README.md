@@ -78,6 +78,7 @@ $ export my_file="$HOME/data.csv"
 
 ### Conditionals
 > Return values are 0:success 1:error
+> if testcode; then successcode; else failcode; fi
 ```bash
 $ if ls c; then echo "ok"; else echo "ups"; fi
 $ if mkdir a; then echo "ok"; else echo "error"; fi
