@@ -49,5 +49,5 @@ $ shellcheck your_script.sh
 $ printf "I am %s and my shell is %s\n" $USER $SHELL
 
 # always qoute and use braces when you have concatenated variables (concatenation between variables or and strings etc.):
-$ grep -- "$container" file.csv > "$directory/${container}_report.csv
+$ grep -- "$container" file.csv > "$directory/${container}_report.csv"
 ```
