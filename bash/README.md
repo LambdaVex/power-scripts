@@ -42,3 +42,9 @@ $ #!/bin/bash -x
 ```bash
 $ shellcheck your_script.sh
 ```
+
+### Tips?
+```bash
+# use the following instead of echo
+$ printf "%s\n" $USER # $USER as example
+```
