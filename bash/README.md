@@ -45,6 +45,6 @@ $ shellcheck your_script.sh
 
 ### Tips?
 ```bash
-# use the following instead of echo
-$ printf "%s\n" $USER # $USER as example
+# use the printf instead of echo .. safer and more powerful
+$ printf "I am %s and my shell is %s\n" $USER $SHELL
 ```
