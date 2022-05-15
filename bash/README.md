@@ -1,7 +1,6 @@
 ### Can't run scripts?
+> Do you have the execute permission for your_script.sh
 ```bash
-Do you have the execute permission for your_script.sh
-
 # You can verify this by running 
 $ ls -l your_script.sh
 
@@ -29,6 +28,20 @@ $ echo $PATH
 
 # now you should be able to execute your script from anywhere
 $ greeter
+```
+```
+# different way using export:
+> $PATH includes all folders where bash searches for commands that you run (if you say 'ls' bash will look in the path variable and search all the directories in the variable for an executable called ls
+
+$ tail ~/.bashrc
+$ nano ~/.bashrc
+# add something like:
+export PATH="$HOME/bin/:$PATH"
+export my_file="$HOME/my_data.csv"
+
+# result:
+> if you create a bin folder in your Home and add a script there (The script is located in one of the folders listed on the $PATH), then you will be able to call it anywhere also without a slash, in addition for the variable that was defined (my_file)
+
 ```
 
 ### Debugging?
@@ -64,36 +77,35 @@ $ export my_file="$HOME/data.csv"
 ```
 
 ### Best practices
-* Quote Your Variables
-    * Use "$x" instead of $x 
-    * No surprises when input contains spaces
-    * Use double quotes
-        * keep meaning of dollar sign intact
-    * Not necessary in zsh
-        * Zsh does not split variables in words
-        * Behaviour is configurable
-
-* Braces
-    * Where does your variable name end?
-    * echo  "${foor}bar"
-        * prints value of var foo
-        * followed by string "bar"
-    * ech "$foobar"
+> Quote Your Variables
+```bash
+# Use "$x" instead of $x so that there is no surprises when input contains spaces.
+# Use double quotes to keep meaning of dollar sign intact
+# Zsh is different. Zsh does not split variables in words and  the Behaviour is configurable
+```
+> Braces
+```bash
+# Where does your variable name end?
+$ echo  "${foo}bar"
+    * prints value of var foo
+    * followed by string "bar"
+$ echo "$foobar"
     * prints value of foobar
-
-* Your script can acces inpto from argumets
-    * $ create_report.sh A5 myfolder
-* Inside the script, the arguments are available as special numbered variables
-    * $ container="$1" # The first argument
-    * $ directory="$2" # Second argument 
-    * $ third_arg="$3" # etc.
-
-* End of Options
-    * If your input might start with a -
-    * Use -- (end of options)
-    * $ grep -- "$user_input"
-    * $ rm -- "$file_to_delete"
-    
-    * Some commands don't support this
-    * Use printf instead of echo
-    * $ printf "I will delete the file: $s\n" "$file_to_delete" 
+```
+> Taking Arguments
+```bash
+# Your script can acces input from argumets. Inside the script, the arguments are available as special numbered variables.
+$ create_report.sh A5 myfolder
+$ container="$1" # The first argument
+$ directory="$2" # Second argument 
+$ third_arg="$3" # etc.
+```
+> End of Options
+```bash
+# If your input might start with a - then Use -- (end of options)
+$ grep -- "$user_input"
+$ rm -- "$file_to_delete"
+# Some commands don't support this
+# Use printf instead of echo
+$ printf "I will delete the file: $s\n" "$file_to_delete" 
+```
