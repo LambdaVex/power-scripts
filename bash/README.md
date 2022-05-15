@@ -36,6 +36,10 @@ $ greeter
 $ #!/bin/bash -v
 # or
 $ #!/bin/bash -x
+
+# if your shell is at /usr/bin/env
+$ #!/usr/bin/env zsh
+$ set -x
 ```
 
 ### Check your script?
@@ -73,5 +77,16 @@ $ grep -- "$container" file.csv > "$directory/${container}_report.csv"
 * Your script can acces inpto from argumets
     * $ create_report.sh A5 myfolder
 * Inside the script, the arguments are available as special numbered variables
-    * container="$1" # The first argument
-    * directory="$2" # Second argument 
+    * $ container="$1" # The first argument
+    * $ directory="$2" # Second argument 
+    * $ third_arg="$3" # etc.
+
+* End of Options
+    * If your input might start with a -
+    * Use -- (end of options)
+    * $ grep -- "$user_input"
+    * $ rm -- "$file_to_delete"
+    
+    * Some commands don't support this
+    * Use printf instead of echo
+    * $ printf "I will delete the file: $s\n" "$file_to_delete" 
