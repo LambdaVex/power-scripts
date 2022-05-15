@@ -4,7 +4,7 @@ A repository that includes helpful tips for linux
 
 ### System Information Tool
 ```sh
-hostnamectl
+:~$ hostnamectl
 ```
 
 ```sh
