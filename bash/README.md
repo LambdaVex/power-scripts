@@ -76,6 +76,22 @@ $ export my_file
 $ export my_file="$HOME/data.csv"
 ```
 
+### Conditionals
+> Return values are 0:success 1:error
+```bash
+$ if ls c; then echo "ok"; else echo "ups"; fi
+$ if mkdir a; then echo "ok"; else echo "error"; fi
+
+# check the script and its returl values
+$ if your_script.sh; then echo "Success"; else echo "Error"; fi
+
+# example in script
+$ if [[ ! $1 ]]; then
+$     echo "Error: missing parameter: first argument"
+$     exit 1
+$ fi
+```
+
 ### Best practices
 > Quote Your Variables
 ```bash
