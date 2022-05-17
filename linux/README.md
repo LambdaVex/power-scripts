@@ -35,6 +35,9 @@ lsb_release
 # ^ start of string & end of string
 $ sudo apt search ^zsh$
 $ sudo apt show ^zsh$
+
+# tip: to reconfigre zsh
+$ zsh-newuser-install
 ```
 
 ### Repositories and PPAs (Be sure to backup this directory)
