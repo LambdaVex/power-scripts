@@ -30,6 +30,13 @@ lsb_release
 :~$ sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade  && sudo apt autoremove && sudo apt autoclean && sudo apt clean && sudo apt update && sudo apt autoremove -y && sudo apt autoclean && sudo apt full-upgrade -y && sudo apt-get clean && sudo apt-get autoclean && sudo apt-get autoremove
 ```
 
+### Installing Apps
+```sh
+# ^ start of string & end of string
+$ sudo apt search ^zsh$
+$ sudo apt show ^zsh$
+```
+
 ### Repositories and PPAs (Be sure to backup this directory)
 ```sh
 :~$ ll /etc/apt/sources.list.d/
