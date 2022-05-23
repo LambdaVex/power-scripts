@@ -1,7 +1,7 @@
 import requests
 
-user_name = "Fill_Value"
-authorization_token = "Fill_Value"
+user_name = "[USER]"
+authorization_token = "[TOKEN]"
 
 mode = input("Would you like to use API-Tokens in the request (1:yes / 2:no ): ").lower()
 
