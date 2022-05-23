@@ -41,4 +41,8 @@ $ sudo journalctl _PID=ID
 
 $ less /proc/meminfo
 $ free -h
+
+# you can vmstat over hours or days (periodic snapshots of the state of your memory) 
+# here we can see 4 pieces of 1 second intervals
+$ vmstat 1 4
 ```
