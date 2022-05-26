@@ -70,6 +70,11 @@ $ ./stresser1.sh
 # there is a coloumn in top called NI that indicates this value
 $ nice -19 ./stresser1.sh &
 
+```
+
+##### Controlling Processes Using cgroups
+```bash
+$ apt install cgroup-bin cgroup-lite cgroup-tools cgroupfs-mount libcgroup1 
 
 ```
 
