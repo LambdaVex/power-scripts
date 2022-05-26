@@ -1,6 +1,7 @@
 # linux-playground
 A repository that includes helpful tips for linux
 
+Refer also to https://github.com/AliDenno/power-scripts/tree/master/bash
 
 ### System Information Tool
 ```sh
