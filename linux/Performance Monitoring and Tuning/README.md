@@ -74,7 +74,13 @@ $ nice -19 ./stresser1.sh &
 
 ##### Controlling Processes Using cgroups
 ```bash
+# The idea is that you can assign processes to groups whose system rights are then tracked and/or limited by the rules you set.
+# Those rules will control members of the groups along with any new child processes spawned by the members
+# (looks like cgroup-bin was replaced by cgroup-tools)
 $ apt install cgroup-bin cgroup-lite cgroup-tools cgroupfs-mount libcgroup1 
+
+# create a controlled group
+$ cgreate -a ubuntu -g cpu:testgroup
 
 ```
 
