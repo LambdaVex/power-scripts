@@ -81,6 +81,8 @@ $ apt install cgroup-bin cgroup-lite cgroup-tools cgroupfs-mount libcgroup1
 
 # create a controlled group
 $ cgreate -a ubuntu -g cpu:testgroup
+$ cd /sys/fs/cgroup/
+$ cd cpu
 
 ```
 
