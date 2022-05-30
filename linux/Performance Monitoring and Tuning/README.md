@@ -79,12 +79,33 @@ $ nice -19 ./stresser1.sh &
 # (looks like cgroup-bin was replaced by cgroup-tools)
 $ apt install cgroup-bin cgroup-lite cgroup-tools cgroupfs-mount libcgroup1 
 
-# create a controlled group
+# create a controlled group called testgroup and place it in subsystem called CPU
 $ cgreate -a ubuntu -g cpu:testgroup
 $ cd /sys/fs/cgroup/
 $ cd cpu
+$ cat cpu.cfs_period_us
+$ cat cpu.cfs_quota_us
+$ cd testgroup
+# 25% of the 100,000 value of cpu (if it was 100,000)
+$ cgset -r cpu.cfs_quota_us=25000 testgroup
 
+# test the script -> it won't superpass 25% of the cpu power
+$ cgexec -g cpu:testgroup ./stresser.sh
+
+# Memory
+$ cd /sys/fs/cgroup/memory
+$ cat memory.limit_in_bytes
+# Let's stop marvin from using lots of memory (chrome)
+$ cgcreate -a ubuntu -g memory:stopmarvin
+$ cgset -r memory.limit_in_bytes=512m stopmarvin
+$ cgexec -g memory:stopmarvin /opt/google/chrome/chrome
 ```
+```
+# to keep the changes active after reboot, one way to do that 
+# make the script executable and add it to the '/etc/anacrontab'
+$ -> 1  2  /home/ubuntu/myscript.sh
+```
+file:///home/ali/Pictures/Screenshots/Screenshot%20from%202022-05-30%2014-37-19.png![image](https://user-images.githubusercontent.com/6619191/170993922-54afc70c-bc00-4fd3-bca8-ac22ffc9ca2c.png)
 
 #### Memory Usage
 ```bash
