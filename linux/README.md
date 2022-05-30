@@ -31,7 +31,7 @@ lsb_release
 :~$ sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade  && sudo apt autoremove && sudo apt autoclean && sudo apt clean && sudo apt update && sudo apt autoremove -y && sudo apt autoclean && sudo apt full-upgrade -y && sudo apt-get clean && sudo apt-get autoclean && sudo apt-get autoremove
 ```
 
-### Installing Apps
+### Installing and starting Apps
 ```sh
 # ^ start of string & end of string
 $ sudo apt search ^zsh$
@@ -39,6 +39,9 @@ $ sudo apt show ^zsh$
 
 # tip: to reconfigre zsh
 $ zsh-newuser-install
+
+# to know how an app is started (let's say chrome)
+$ ps aux | grep chrome
 ```
 
 ### Repositories and PPAs (Be sure to backup this directory)
