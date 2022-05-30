@@ -105,7 +105,7 @@ $ cgexec -g memory:stopmarvin /opt/google/chrome/chrome
 # make the script executable and add it to the '/etc/anacrontab'
 $ -> 1  2  /home/ubuntu/myscript.sh
 ```
-file:///home/ali/Pictures/Screenshots/Screenshot%20from%202022-05-30%2014-37-19.png![image](https://user-images.githubusercontent.com/6619191/170993922-54afc70c-bc00-4fd3-bca8-ac22ffc9ca2c.png)
+![image](https://user-images.githubusercontent.com/6619191/170993922-54afc70c-bc00-4fd3-bca8-ac22ffc9ca2c.png)
 
 #### Memory Usage
 ```bash
