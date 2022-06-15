@@ -100,6 +100,12 @@ Ctrl + Z
 # Bring it back again (foreground)
 :~$ fg
 
+# update indecies
+:~$ apt update
+# you need sudo to perform that
+# !! -> last command you ran
+:~$ sudo !! 
+
 ```
 
 ### Tips
