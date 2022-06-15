@@ -97,7 +97,7 @@ Ctrl + L
 
 # Send something to the background without closing it (Vim, Htop, etc.)
 Ctrl + Z
-# Bring it back again
+# Bring it back again (foreground)
 :~$ fg
 
 ```
