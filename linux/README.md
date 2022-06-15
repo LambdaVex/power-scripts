@@ -106,6 +106,10 @@ Ctrl + Z
 # !! -> last command you ran
 :~$ sudo !! 
 
+# check previous commands
+:~$ ctrl r -> type something -> ctrl r again and again 
+# or
+:~$ history
 ```
 
 ### Tips
