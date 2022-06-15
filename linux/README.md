@@ -110,6 +110,10 @@ Ctrl + Z
 :~$ ctrl r -> type something -> ctrl r again and again 
 # or
 :~$ history
+# find all commands, find the one you want and then 
+:~$ !wishedCommandNumber
+# you can use the following command to show the time when invoking the command above (you can set it permenantly in the ~/.bashrc file)
+:~$ HISTTIMEFORMAT="%Y-%m-%d %T "
 ```
 
 ### Tips
@@ -117,5 +121,6 @@ Ctrl + Z
 # Using Tab as shortcut in the terminal
 $ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ next-tab '<Primary>Tab'
 $ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ prev-tab '<Primary><Shift>Tab'
-
 ```
+
+> which command in Linux is a command which is used to locate the executable file associated with the given command by searching it in the path environment variable. It has 3 return status
