@@ -94,6 +94,8 @@ Ctrl + A
 Ctrl + E
 # Clear screen by moving the command prompt to the top of the screen (history still there)
 Ctrl + L
+# If you have a long command and you want to delete it ... you can delete all on line 
+Ctrl + U
 
 # Send something to the background without closing it (Vim, Htop, etc.)
 Ctrl + Z
@@ -126,3 +128,5 @@ $ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy
 > which command in Linux is a command which is used to locate the executable file associated with the given command by searching it in the path environment variable. It has 3 return status
 
 > :~$ cmatrix
+
+> reset helps you when you mess up certain terminal settings
