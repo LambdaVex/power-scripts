@@ -50,37 +50,6 @@ $ ps aux | grep chrome
 :~$ grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
 ```
 
-```sh
-# Open a terminal
-:~$ $mod + ENTER
-# Launching system applications via the dmenu
-:~$ $mod + d
-# Enter a fullscreen mode on and off
-:~$ $mod + f
-# Closing an application window
-:~$ $mod + Shift + q
-# Restarting i3
-:~$ $mod + Shift + r
-# Exiting i3 windows manager
-:~$ $mod + Shift + e
-
-> https://kifarunix.com/install-i3-windows-manager-on-ubuntu/
-```
-
-### Useful Commands
-```sh
-# Home directory
-:~$ cd ~
-# Previous directory
-:~$ cd -
-# Go to directory and save current (This works as a stack)
-:~$ pushd /var
-# Return to saved directory
-:~$ popd
-# Reset Shell
-:~$ reset
-```
-
 ### Effective commandline experience
 ```sh
 # Go to the beginning of a command
@@ -112,6 +81,20 @@ Ctrl + Z
 # you can use the following command to show the time when invoking the command above (you can set it permenantly in the ~/.bashrc file)
 # so set the property and run history again
 :~$ HISTTIMEFORMAT="%Y-%m-%d %T "
+```
+
+### Useful Commands
+```sh
+# Home directory
+:~$ cd ~
+# Previous directory
+:~$ cd -
+# Go to directory and save current (This works as a stack)
+:~$ pushd /var
+# Return to saved directory
+:~$ popd
+# Reset Shell
+:~$ reset
 ```
 
 ### Tips
