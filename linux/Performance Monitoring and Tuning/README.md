@@ -120,3 +120,6 @@ $ free -h
 # here we can see 4 pieces of 1 second intervals
 $ vmstat 1 4
 ```
+
+> tail -f /var/log/syslog
+> - monitor actions on your system 
