@@ -87,7 +87,10 @@ $ ps aux | grep chrome
 :~$ popd
 # Reset Shell
 :~$ reset
+```
 
+### Effective commandline experience
+```sh
 # Go to the beginning of a command
 Ctrl + A
 # Go to the end of a command
