@@ -136,4 +136,4 @@ $ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy
 > reset helps you when you mess up certain terminal settings
 
 > ls -l; echo "hellow world" .. and .. ls -l && echo "hellow world" 
-> # in case of first variation, if the first command failed, the second will still execute unlike the second variation (try ls a directory that doesn't exist .. the second command won't run)
+> - in case of first variation, if the first command failed, the second will still execute unlike the second variation (try ls a directory that doesn't exist .. the second command won't run)
