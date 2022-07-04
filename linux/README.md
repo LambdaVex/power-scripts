@@ -115,6 +115,7 @@ Ctrl + Z
 # find all commands, find the one you want and then 
 :~$ !wishedCommandNumber
 # you can use the following command to show the time when invoking the command above (you can set it permenantly in the ~/.bashrc file)
+# so set the property and run history again
 :~$ HISTTIMEFORMAT="%Y-%m-%d %T "
 ```
 
