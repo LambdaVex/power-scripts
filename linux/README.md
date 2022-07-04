@@ -130,13 +130,16 @@ $ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy
 ```
 
 > which command in Linux is a command which is used to locate the executable file associated with the given command by searching it in the path environment variable. It has 3 return status
-
+---
 > :~$ cmatrix
-
+---
 > reset helps you when you mess up certain terminal settings
-
+---
 > ls -l; echo "hellow world" .. and .. ls -l && echo "hellow world" 
 > - in case of first variation, if the first command failed, the second will still execute unlike the second variation (try ls a directory that doesn't exist .. the second command won't run)
-
+---
 > tail -f /var/log/syslog
 > - monitor actions on your system 
+---
+> truncate -s 0 file1.txt
+> - Empty the file 
