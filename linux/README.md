@@ -143,3 +143,7 @@ $ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy
 ---
 > truncate -s 0 file1.txt
 > - Empty the file 
+---
+> mount | column -t
+> show jumbled output in columns
+---
