@@ -3,6 +3,30 @@ A repository that includes helpful tips for linux
 
 Refer also to https://github.com/AliDenno/power-scripts/tree/master/bash
 
+<details><summary><b>Terminal Basics</b></summary>
+
+> Relative path: starting from my current location, I navigate to another folder 
+
+> Absolute path: what "pwd" shows, in other words the path starting from the root 
+
+> Remember that when you want to access the folder "Ali Folder" you need to perform "$ cd Ali\ Folder"
+
+Command | Description |  
+---------- | ------ | 
+cd | print current path | 
+cd ~ | takes you home | 
+dir | list items | 
+cls | clear command prompt | 
+cd (..) | change directory | 
+echo text > name(.type) | create file | 
+mkdir foldername | create directory | 
+del file | delete file | 
+rmdir folder | delete folder | 
+copy file | copy file | 
+move file or folder | move file or folder | 
+
+</details>
+
 ### System Information Tool
 ```sh
 :~$ hostnamectl
