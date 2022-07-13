@@ -123,3 +123,6 @@ $ vmstat 1 4
 
 > tail -f /var/log/syslog
 > - monitor actions on your system 
+
+#### References
+https://www.unixmen.com/10-linux-commands-to-monitor-your-systems-health/
