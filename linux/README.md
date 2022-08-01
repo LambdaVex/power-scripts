@@ -57,7 +57,7 @@ lsb_release
 
 > Solution for being stuck with: The following packages have been kept back
 ```sh
-sudo apt-get install aptitude -y ; sudo aptitude safe-upgrade
+:~$ sudo apt-get install aptitude -y ; sudo aptitude safe-upgrade
 ```
 
 ### Installing and starting Apps
