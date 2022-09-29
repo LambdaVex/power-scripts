@@ -50,7 +50,7 @@ echo "
 </head>
 <body>
   <div>
-    <h1>Welcome To This Course</h1>
+    <h1>Welcome</h1>
     <p>Hello from AWS</p>
   </div>
 </body>
