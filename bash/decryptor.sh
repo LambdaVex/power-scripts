@@ -1,4 +1,5 @@
 #!/bin/bash
+# Goal is to find the correct password for a file by providing a list of words Or in simple words crack a password-protected file.
 
 # List of passwords
 input="words"
