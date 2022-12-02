@@ -1,5 +1,6 @@
 #!/bin/bash
 # Goal is to find the correct password for a file by providing a list of words Or in simple words crack a password-protected file.
+# Note: 7z should be installed: => $ sudo apt install p7zip-full
 
 # List of passwords
 input="words"
