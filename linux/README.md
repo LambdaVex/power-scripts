@@ -142,6 +142,18 @@ $ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy
 $ killall snap-store
 $ snap refresh
 ```
+> spot and kill stuck apps
+```sh
+# Spot
+$ xprop _NET_WM_PID | sed 's/_NET_WM_PID(CARDINAL) = //' | ps `cat`
+# or
+$ xprop | grep PID
+
+# Kill
+$ kill -9 pid
+$ killall -9 appname
+```
+
 
 > which command in Linux is a command which is used to locate the executable file associated with the given command by searching it in the path environment variable. It has 3 return status
 ---
