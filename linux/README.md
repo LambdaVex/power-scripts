@@ -137,6 +137,12 @@ $ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy
 $ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ prev-tab '<Primary><Shift>Tab'
 ```
 
+> snapstore update
+```sh
+$ killall snap-store
+$ snap refresh
+```
+
 > which command in Linux is a command which is used to locate the executable file associated with the given command by searching it in the path environment variable. It has 3 return status
 ---
 > :~$ cmatrix
