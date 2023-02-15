@@ -13,18 +13,20 @@ Refer also to https://github.com/AliDenno/power-scripts/tree/master/bash
 
 Command | Description |  
 ---------- | ------ | 
-cd | print current path | 
-cd ~ | takes you home | 
-dir | list items | 
+pwd | print working directory | 
+ls | list items | 
+dir | list items |
+cd or cd ~ | home directory | 
+cd / | root directory | 
 cls | clear command prompt | 
-cd (..) | change directory | 
+ctrl + l | clear command prompt by moving down | 
 echo text > name(.type) | create file | 
 mkdir foldername | create directory | 
 del file | delete file | 
 rmdir folder | delete folder | 
-copy file | copy file | 
-move file or folder | move file or folder | 
-
+cp | copy file | 
+mv | move file or folder | 
+touch | create or touch file |
 </details>
 
 ### System Information Tool
