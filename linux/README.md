@@ -52,6 +52,11 @@ lsb_release
 :~$ lsb_release -a
 ```
 
+### Watch regular time intervals [WATCH]
+```sh
+watch -n 2 'curl -v --silent LINK 2>&1 | grep TEXT'
+```
+
 ### System Update
 ```sh
 :~$ sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade  && sudo apt autoremove && sudo apt autoclean && sudo apt clean && sudo apt update && sudo apt autoremove -y && sudo apt autoclean && sudo apt full-upgrade -y && sudo apt-get clean && sudo apt-get autoclean && sudo apt-get autoremove
