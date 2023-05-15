@@ -64,8 +64,9 @@ sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade  && sud
 
 > Solution for being stuck with: The following packages have been kept back
 ```sh
-:~$ sudo apt-get install aptitude -y ; sudo aptitude safe-upgrade
-
+sudo apt-get install aptitude -y ; sudo aptitude safe-upgrade
+```
+```sh
 # helpful commands
 :~$ sudo apt install apt-show-versions
 :~$ apt list --upgradable
