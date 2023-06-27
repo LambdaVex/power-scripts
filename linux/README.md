@@ -162,22 +162,29 @@ $ kill -9 pid
 $ killall -9 appname
 ```
 
+> **Note**  
+> monitor actions on your linux system </br>
+> :~$ tail -f /var/log/syslog
 
-> which command in Linux is a command which is used to locate the executable file associated with the given command by searching it in the path environment variable. It has 3 return status
----
-> :~$ cmatrix
----
-> reset helps you when you mess up certain terminal settings
----
+> **Note**  
+> mounted file systems in a formatted, tabular layout (show jumbled output in columns)</br>
+> :~$ mount | column -t
+
+> **Note**
+> which command in Linux is a command which is used to locate the executable file associated with the given command by searching it in the path environment variable. It has 3 return status.
+
+> **Note**
+> reset helps when certain terminal settings are messed up
+
+> **Note**
+> CL conditionals <br>
 > ls -l; echo "hellow world" .. and .. ls -l && echo "hellow world" 
-> - in case of first variation, if the first command failed, the second will still execute unlike the second variation (try ls a directory that doesn't exist .. the second command won't run)
----
-> tail -f /var/log/syslog
-> - monitor actions on your system 
----
-> truncate -s 0 file1.txt
-> - Empty the file 
----
-> mount | column -t
-> show jumbled output in columns
----
+> in case of first variation, if the first command failed, the second will still execute unlike the second variation (try ls a directory that doesn't exist .. the second command won't run)
+
+> **Warning**  
+> Launch the matrix </br>
+> :~$ cmatrix
+
+> **Warning**  
+> Empty file1.txt </br>
+> :~$ truncate -s 0 file1.txt
