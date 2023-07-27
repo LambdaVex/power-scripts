@@ -138,6 +138,11 @@ Ctrl + Z
 :~$ reset
 ```
 
+### Folder size
+```console
+du -sh *
+```
+
 ### Tips
 ```sh
 # Using Tab as shortcut in the terminal
