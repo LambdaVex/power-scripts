@@ -62,7 +62,7 @@ watch -n 2 'curl -v --silent LINK 2>&1 | grep TEXT'
 sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade  && sudo apt autoremove && sudo apt autoclean && sudo apt clean && sudo apt update && sudo apt autoremove -y && sudo apt autoclean && sudo apt full-upgrade -y && sudo apt-get clean && sudo apt-get autoclean && sudo apt-get autoremove
 ```
 ```sh
-apt full-upgrade
+sudo apt full-upgrade
 ```
 > **Note**
 > Solution for being stuck with error: The following packages have been kept back
