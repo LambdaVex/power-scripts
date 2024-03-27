@@ -61,6 +61,14 @@ watch -n 2 'curl -v --silent LINK 2>&1 | grep TEXT'
 ```sh
 sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade  && sudo apt autoremove && sudo apt autoclean && sudo apt clean && sudo apt update && sudo apt autoremove -y && sudo apt autoclean && sudo apt full-upgrade -y && sudo apt-get clean && sudo apt-get autoclean && sudo apt-get autoremove
 ```
+Safer Option
+```sh
+sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
+```
+or
+```sh
+sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y
+```
 ```sh
 sudo apt full-upgrade
 ```
